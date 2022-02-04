@@ -1,0 +1,22 @@
+{
+  "name": "javascript_profesional",
+  "version": "1.0.0",
+  "description": "Proyecto del curso profesional de javascript. Plati Media Player",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grigerlord/javascript_profesional.git"
+  },
+  "keywords": [
+    "media",
+    "player"
+  ],
+  "author": "Griger Ratia | Grigerlord | <grigerratia@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
