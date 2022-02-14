@@ -1,26 +1,17 @@
+import MediaPlayer from './MediaPlayer.js';
+import AutoPlay from './plugins/AutoPlay.js';
+
 const video = document.querySelector('video');
-const button = document.querySelector('button');
+const player = new MediaPlayer({ el: video, plugins: [new AutoPlay()] });
 
+const playButton = document.querySelector('#playButton');
+playButton.onclick = () => player.togglePlay();
 
-function MedioDeReproduccion(objetoAConfigurar){
-    this.medioDeReproduccion = objetoAConfigurar.elemento;
-}
-
-const nuevoMedioDeReproduccion = new MedioDeReproduccion(
-    {
-        elemento: video
-    });
-
-MedioDeReproduccion.prototype.reproducir = function(){
-    this.medioDeReproduccion.play();
-}
-
-MedioDeReproduccion.prototype.pausar = function(){
-    this.medioDeReproduccion.pause();
-}
-
-button.onclick = () => {
-    (video.paused)
-        ? nuevoMedioDeReproduccion.reproducir()
-        : nuevoMedioDeReproduccion.pausar()
-}
+const muteButton = document.querySelector('#muteButton');
+muteButton.onclick = () => {
+    if (player.media.muted) {
+        player.unmute();
+    } else {
+        player.mute();
+    }
+};
