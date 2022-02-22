@@ -114,56 +114,21 @@
       // link.saludar();
 
       // new es un atajo (azucar sintactica) para llevar Hero.prototype al objeto que estamos creando
-      // function Hero(name) {
-      //   // this = Object.create(Hero.prototype);
-      //   this.name = name;
-      //   // return this;
-      // }
+      function Hero(name) {
+        // this = Object.create(Hero.prototype);
+        this.name = name;
+        // return this;
+      }
 
-      // Hero.prototype.saludar = function() {
-      //   console.log(`New: ${this.name}`);
-      // };
+      Hero.prototype.saludar = function() {
+        console.log(`New: ${this.name}`);
+      };
 
-      // const zelda = new Hero('Zelda');
-      // zelda.saludar();
+      const zelda = new Hero('Zelda');
+      zelda.saludar();
 
-      // const link = new Hero('Link');
-      // link.saludar();
-
-
-
-      function Perro (name, direccion) {
-      this.name = name
-      this.direccion = direccion
-    }
-    
-    function Perro (name, direccion) {
-      this.name = name
-      this.direccion = direccion
-    }
-
-    Perro.prototype.ladrar = function() {
-      console.log(`${this.name} ladra: wau wau!`)
-    }
-
-    Perro.prototype.caminar = function(){
-      console.log(`${this.name} esta caminando hacia el ${this.direccion}`);
-    }
-
-    const budy = new Perro('Buddy', 'sur')
-    budy.ladrar()
-    budy.caminar()
-
-
-    const rambo = new Perro('Rambo', 'oeste')
-    rambo.ladrar()
-    rambo.caminar()
-
-
-
-
-
-
+      const link = new Hero('Link');
+      link.saludar();
     </script>
   </body>
 </html>

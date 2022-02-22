@@ -39,7 +39,7 @@
         return data.results;
       }
 
-      async function getTopMoviesIds(n = 5) {
+      async function getTopMoviesIds(n = 3) {
         // return getPopularMovies().then(popularMovies =>
         //   popularMovies.slice(0, n).map(movie => movie.id)
         // );
@@ -48,8 +48,6 @@
         // } catch (error) {
         //   console.log(error.message)
         // }
-
-        //Hay que repasar mucho
 
         const popularMovies = await getPopularMovies();
         const ids = popularMovies.slice(0, n).map(movie => movie.id);
@@ -64,7 +62,7 @@
           const listItem = document.createElement('li');
           listItem.innerHTML = `
             <img src="https://image.tmdb.org/t/p/w342${movie.poster_path}" />
-            <h6>${movie.title}</h6>
+            <h5>${movie.title}</h5>
             <p>Released on <em>${movie.release_date}</em></p>
             `;
 
